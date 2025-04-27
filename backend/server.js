@@ -18,8 +18,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/your-database-name', {
   useUnifiedTopology: true,
 })
   .then(() => console.log('MongoDB Connected'))
-  .catch((err) => console.log('MongoDB connection error:', err));
-
+  .catch((err) => console.log(err));
+  
 // Student Schema
 const Student = mongoose.model('Student', {
   name: String,
