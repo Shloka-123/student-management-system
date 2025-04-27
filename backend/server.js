@@ -6,8 +6,9 @@ const app = express();
 
 // Enable CORS for your frontend URL
 app.use(cors({
-  origin: 'https://student-management-system-1-z66d.onrender.com',  // Updated frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE']
+  origin: 'https://student-management-system-frontend-4cwe.onrender.com',  // Replace with your actual frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
 }));
 
 app.use(express.json());  // For parsing application/json
@@ -19,7 +20,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/your-database-name', {
 })
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.log(err));
-
+  
 // Student Schema
 const Student = mongoose.model('Student', {
   name: String,
