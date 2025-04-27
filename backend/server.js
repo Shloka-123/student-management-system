@@ -12,7 +12,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/your-database-name', {
   })
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.log(err));
-  
+  app.use(cors({
+    origin: 'https://student-management-system-frontend-4cwe.onrender.com'  // Replace with your frontend URL
+}));
+
 // Student Schema
 const Student = mongoose.model('Student', {
     name: String,
