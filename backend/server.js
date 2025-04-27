@@ -4,11 +4,7 @@ const cors = require('cors');  // Make sure to import cors at the top
 
 const app = express();
 
-// Enable CORS for your frontend URL
-app.use(cors({
-  origin: 'https://student-management-system-frontend-4cwe.onrender.com',  // Replace with your actual frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE']
-}));
+
 
 app.use(express.json());  // For parsing application/json
 
@@ -53,7 +49,10 @@ app.delete('/students/:id', async (req, res) => {
   await Student.findByIdAndDelete(req.params.id);
   res.send({ message: 'Student deleted' });
 });
-
+app.use(cors({
+  origin: 'https://student-management-system-frontend-4cwe.onrender.com',  // Replace with your actual frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
 // Start server
 app.listen(5000, () => {
   console.log('Server is running on http://localhost:5000');
