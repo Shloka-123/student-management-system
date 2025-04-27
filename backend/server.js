@@ -7,8 +7,7 @@ const app = express();
 // Enable CORS for your frontend URL
 app.use(cors({
   origin: 'https://student-management-system-frontend-4cwe.onrender.com',  // Replace with your actual frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
 }));
 
 app.use(express.json());  // For parsing application/json
