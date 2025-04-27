@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
+const port = process.env.PORT || 5000;
 
 // Enable CORS for your frontend URL
 app.use(cors({
