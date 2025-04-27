@@ -8,7 +8,7 @@ function EditStudent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-   axios.get('https://student-management-system-br00.onrender.com/students')
+   axios.get('https://student-management-system-backend-6whu.onrender.com')
 
       .then(res => setStudent(res.data));
   }, [id]);
