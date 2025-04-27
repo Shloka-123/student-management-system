@@ -6,7 +6,7 @@ function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('https://student-management-system-br00.onrender.com/students')
+    axios.get('https://student-management-system-backend-6whu.onrender.com')
 
       .then(res => setStudents(res.data))
       .catch(err => console.log(err));
