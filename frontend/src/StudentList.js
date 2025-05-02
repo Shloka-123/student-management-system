@@ -6,8 +6,7 @@ function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('https://student-management-system-backend-6whu.onrender.com')
-
+    axios.get('http://localhost:5000/students')
       .then(res => setStudents(res.data))
       .catch(err => console.log(err));
   }, []);
