@@ -6,14 +6,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://student-management-system-frontend-4cwe.onrender.com',
-];
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 
 const mongoURI = process.env.MONGO_URI;
