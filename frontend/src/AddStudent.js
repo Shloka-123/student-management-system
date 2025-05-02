@@ -8,7 +8,7 @@ function AddStudent() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/students', student)
+    axios.post('https://student-management-system-backend-mk6f.onrender.com/students', student)
       .then(() => {
         alert('Student Added');
         navigate('/students');
