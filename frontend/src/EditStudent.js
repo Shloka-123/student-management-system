@@ -8,14 +8,14 @@ function EditStudent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/students/${id}`)
+    axios.get(`https://student-management-system-backend-mk6f.onrender.com/students/${id}`)
       .then(res => setStudent(res.data))
       .catch(err => console.error('Error fetching student:', err));
   }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5000/students/${id}`, student)
+    axios.put(`https://student-management-system-backend-mk6f.onrender.com/students/${id}`, student)
       .then(() => {
         alert('Student Updated');
         navigate('/students');
