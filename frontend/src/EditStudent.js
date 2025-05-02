@@ -8,9 +8,9 @@ function EditStudent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-   axios.get('https://student-management-system-backend-6whu.onrender.com')
-
-      .then(res => setStudent(res.data));
+    axios.get(`http://localhost:5000/students/${id}`)
+      .then(res => setStudent(res.data))
+      .catch(err => console.error('Error fetching student:', err));
   }, [id]);
 
   const handleSubmit = (e) => {
@@ -26,9 +26,21 @@ function EditStudent() {
     <div>
       <h2>Edit Student</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={student.name} onChange={(e) => setStudent({ ...student, name: e.target.value })} /><br />
-        <input type="number" value={student.age} onChange={(e) => setStudent({ ...student, age: e.target.value })} /><br />
-        <input type="text" value={student.course} onChange={(e) => setStudent({ ...student, course: e.target.value })} /><br />
+        <input
+          type="text"
+          value={student.name}
+          onChange={(e) => setStudent({ ...student, name: e.target.value })}
+        /><br />
+        <input
+          type="number"
+          value={student.age}
+          onChange={(e) => setStudent({ ...student, age: e.target.value })}
+        /><br />
+        <input
+          type="text"
+          value={student.course}
+          onChange={(e) => setStudent({ ...student, course: e.target.value })}
+        /><br />
         <button type="submit">Update</button>
       </form>
     </div>
